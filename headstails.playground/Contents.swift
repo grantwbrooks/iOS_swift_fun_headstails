@@ -4,7 +4,7 @@ import UIKit
 
 func tossCoin() -> String {
     print("Tossing a Coin!")
-    let flip: Int = Int(arc4random_uniform(UInt32(2)))
+    let flip = Int(arc4random_uniform(UInt32(2)))
     if flip == 1 {
         print("Heads")
         return "Heads"
@@ -16,19 +16,19 @@ func tossCoin() -> String {
 
 tossCoin()
 
-func tossMultipleCoins(someInt: Int) -> Double {
+func tossMultipleCoins(toss: Int) -> Double {
     var headcounter = Int()
-    for _ in 1...someInt {
+    for _ in 1...toss {
         let x = tossCoin()
         if x == "Heads" {
             headcounter += 1
             print(headcounter)
         }
     }
-    return Double(headcounter) / Double(someInt)
+    return Double(headcounter) / Double(toss)
     
     
 }
 
 
-print(tossMultipleCoins(someInt: 100))
+print(tossMultipleCoins(toss: 100))
